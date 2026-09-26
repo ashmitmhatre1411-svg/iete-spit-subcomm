@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join IETE SPIT</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+
+            /* IETE logo inspired theme */
+            background:
+                radial-gradient(circle at 50% 25%, rgba(39, 105, 210, 0.28), transparent 35%),
+                radial-gradient(circle at 20% 80%, rgba(0, 80, 180, 0.18), transparent 30%),
+                #03091d;
+        }
+
+        /* Subtle technical background */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.18;
+            background-image:
+                linear-gradient(rgba(70, 150, 255, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(70, 150, 255, 0.12) 1px, transparent 1px);
+            background-size: 45px 45px;
+            mask-image: linear-gradient(to bottom, black, transparent);
+        }
+
+        .card {
+            position: relative;
+            width: min(92%, 650px);
+            padding: 42px 35px 48px;
+            text-align: center;
+
+            background: rgba(5, 14, 40, 0.82);
+            border: 1px solid rgba(75, 160, 255, 0.35);
+            border-radius: 28px;
+
+            box-shadow:
+                0 0 60px rgba(0, 90, 255, 0.14),
+                inset 0 0 35px rgba(50, 130, 255, 0.04);
+
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            width: 155px;
+            height: 155px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 20px;
+
+            filter:
+                drop-shadow(0 0 12px rgba(35, 135, 255, 0.55))
+                drop-shadow(0 0 30px rgba(0, 70, 255, 0.18));
+        }
+
+        .tag {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 7px 16px;
+
+            color: #79c7ff;
+            border: 1px solid rgba(80, 175, 255, 0.45);
+            border-radius: 999px;
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: clamp(35px, 7vw, 62px);
+            letter-spacing: 5px;
+            line-height: 1;
+            margin-bottom: 14px;
+
+            background: linear-gradient(90deg, #ffffff, #6bc7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #a9b9d5;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 auto 35px;
+            max-width: 470px;
+        }
+
+        .question {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #f3f7ff;
+        }
+
+        .buttons {
+            min-height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            position: relative;
+        }
+
+        button {
+            width: 145px;
+            height: 52px;
+            border-radius: 12px;
+            border: none;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        #yesBtn {
+            color: white;
+            background: linear-gradient(135deg, #1677ff, #45b9ff);
+            box-shadow: 0 8px 25px rgba(20, 120, 255, 0.32);
+        }
+
+        #yesBtn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 32px rgba(20, 140, 255, 0.48);
+        }
+
+        #noBtn {
+            color: #d7e2f5;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(150, 190, 240, 0.25);
+            position: relative;
+        }
+
+        #noBtn:hover {
+            background: rgba(255, 255, 255, 0.11);
+        }
+
+        #noBtn.disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .footer {
+            margin-top: 32px;
+            color: #617391;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                padding: 32px 20px 38px;
+            }
+
+            .logo {
+                width: 125px;
+                height: 125px;
+            }
+
+            .buttons {
+                gap: 12px;
+            }
+
+            button {
+                width: 125px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="card">
+
+        <img src="iete-logo.png" alt="IETE SPIT Logo" class="logo">
+
+        <div class="tag">IETE SPIT • SUBCOMMITTEE</div>
+
+        <h1>JOIN IETE</h1>
+
+        <p class="subtitle">
+            Explore. Create. Connect.<br>
+            Be a part of the IETE SPIT community.
+        </p>
+
+        <div class="question">
+            Do you want to fill the form?
+        </div>
+
+        <div class="buttons">
+            <button id="yesBtn">YES</button>
+            <button id="noBtn">NO</button>
+        </div>
+
+        <div class="footer">
+            INSTITUTION OF ELECTRONICS & TELECOMMUNICATION ENGINEERS • SPIT
+        </div>
+
+    </main>
+
+    <script>
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+
+        const formURL = "https://forms.gle/fS1jgEvnT2bhq68AA";
+
+        // YES → Open Google Form
+        yesBtn.addEventListener("click", () => {
+            window.open(formURL, "_blank");
+        });
+
+        // NO → Move once, then become permanently unclickable
+        noBtn.addEventListener("click", () => {
+            const maxX = Math.min(window.innerWidth * 0.35, 220);
+            const maxY = Math.min(window.innerHeight * 0.20, 120);
+
+            const x = (Math.random() * 2 - 1) * maxX;
+            const y = (Math.random() * 2 - 1) * maxY;
+
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+            // Make NO unclickable after the first click
+            noBtn.classList.add("disabled");
+            noBtn.textContent = "NOPE 😶";
+        });
+    </script>
+
+</body>
+</html>
