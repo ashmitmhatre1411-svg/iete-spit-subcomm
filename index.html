@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -11,7 +10,6 @@
     >
 
     <title>IETE SPIT | Join Us</title>
-
 
     <style>
 
@@ -23,13 +21,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
-
 
         html,
         body {
@@ -37,13 +30,9 @@
             height: 100%;
         }
 
-
         body {
-
             overflow: hidden;
-
             background: #020914;
-
             color: white;
         }
 
@@ -53,7 +42,6 @@
         ========================================= */
 
         .video-background {
-
             position: fixed;
 
             inset: 0;
@@ -65,16 +53,14 @@
 
             z-index: -10;
 
-            /*
-                Make the video visible,
-                but still dark enough for text.
-            */
+            pointer-events: none;
+
+            background: #020914;
 
             filter:
                 brightness(0.62)
                 contrast(1.08)
                 saturate(1.05);
-
         }
 
 
@@ -83,21 +69,21 @@
         ========================================= */
 
         .video-overlay {
-
             position: fixed;
 
             inset: 0;
 
             z-index: -9;
 
+            pointer-events: none;
+
             background:
                 linear-gradient(
                     135deg,
-                    rgba(2, 10, 25, 0.72),
-                    rgba(0, 35, 70, 0.38),
+                    rgba(2, 10, 25, 0.70),
+                    rgba(0, 35, 70, 0.35),
                     rgba(2, 8, 20, 0.72)
                 );
-
         }
 
 
@@ -106,22 +92,21 @@
         ========================================= */
 
         .grid {
-
             position: fixed;
 
             inset: 0;
 
             z-index: -8;
 
+            pointer-events: none;
+
             opacity: 0.18;
 
             background-image:
-
                 linear-gradient(
                     rgba(0, 170, 255, 0.18) 1px,
                     transparent 1px
                 ),
-
                 linear-gradient(
                     90deg,
                     rgba(0, 170, 255, 0.18) 1px,
@@ -129,18 +114,14 @@
                 );
 
             background-size: 50px 50px;
-
-            pointer-events: none;
-
         }
 
 
         /* =========================================
-           GLOW
+           BACKGROUND GLOWS
         ========================================= */
 
         .glow {
-
             position: fixed;
 
             width: 550px;
@@ -158,11 +139,10 @@
             top: -220px;
             left: -180px;
 
+            pointer-events: none;
         }
 
-
         .glow2 {
-
             position: fixed;
 
             width: 500px;
@@ -180,6 +160,7 @@
             bottom: -220px;
             right: -180px;
 
+            pointer-events: none;
         }
 
 
@@ -188,7 +169,6 @@
         ========================================= */
 
         .page {
-
             width: 100%;
             height: 100vh;
 
@@ -199,6 +179,9 @@
 
             padding: 30px;
 
+            position: relative;
+
+            z-index: 1;
         }
 
 
@@ -207,11 +190,7 @@
         ========================================= */
 
         .card {
-
-            width: min(
-                760px,
-                92vw
-            );
+            width: min(760px, 92vw);
 
             min-height: 620px;
 
@@ -233,30 +212,17 @@
             border-radius: 30px;
 
             background:
-                rgba(
-                    4,
-                    17,
-                    37,
-                    0.76
-                );
+                rgba(4, 17, 37, 0.76);
 
             border:
                 1px solid
-                rgba(
-                    80,
-                    190,
-                    255,
-                    0.38
-                );
+                rgba(80, 190, 255, 0.38);
 
-            backdrop-filter:
-                blur(18px);
+            backdrop-filter: blur(18px);
 
-            -webkit-backdrop-filter:
-                blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
             box-shadow:
-
                 0 30px 100px
                 rgba(0, 0, 0, 0.55),
 
@@ -267,34 +233,27 @@
                 rgba(0, 150, 255, 0.035);
 
             animation:
-                cardAppear
-                0.8s ease forwards;
-
+                cardAppear 0.8s ease forwards;
         }
 
 
         @keyframes cardAppear {
 
             from {
-
                 opacity: 0;
 
                 transform:
                     translateY(25px)
                     scale(0.97);
-
             }
 
             to {
-
                 opacity: 1;
 
                 transform:
                     translateY(0)
                     scale(1);
-
             }
-
         }
 
 
@@ -303,21 +262,17 @@
         ========================================= */
 
         .card::before {
-
             content: "";
 
             position: absolute;
 
             top: 0;
-
             left: 15%;
 
             width: 70%;
-
             height: 2px;
 
             background:
-
                 linear-gradient(
                     90deg,
                     transparent,
@@ -328,73 +283,53 @@
             box-shadow:
                 0 0 18px
                 rgba(0, 180, 255, 0.9);
-
         }
 
 
         /* =========================================
-           CORNER DESIGN
+           CORNERS
         ========================================= */
 
         .corner {
-
             position: absolute;
 
             width: 24px;
             height: 24px;
 
             border-color:
-                rgba(
-                    100,
-                    210,
-                    255,
-                    0.75
-                );
-
+                rgba(100, 210, 255, 0.75);
         }
-
 
         .corner.tl {
-
             top: 16px;
             left: 16px;
 
             border-top: 2px solid;
             border-left: 2px solid;
-
         }
-
 
         .corner.tr {
-
             top: 16px;
             right: 16px;
 
             border-top: 2px solid;
             border-right: 2px solid;
-
         }
 
-
         .corner.bl {
-
             bottom: 16px;
             left: 16px;
 
             border-bottom: 2px solid;
             border-left: 2px solid;
-
         }
 
-
         .corner.br {
-
             bottom: 16px;
             right: 16px;
 
             border-bottom: 2px solid;
             border-right: 2px solid;
-
         }
 
 
@@ -403,7 +338,6 @@
         ========================================= */
 
         .logo {
-
             width: 145px;
             height: 145px;
 
@@ -412,7 +346,6 @@
             margin-bottom: 22px;
 
             filter:
-
                 drop-shadow(
                     0 0 12px
                     rgba(0, 190, 255, 0.9)
@@ -424,9 +357,7 @@
                 );
 
             animation:
-                logoFloat
-                4s ease-in-out infinite;
-
+                logoFloat 4s ease-in-out infinite;
         }
 
 
@@ -434,15 +365,12 @@
 
             0%,
             100% {
-                transform:
-                    translateY(0);
+                transform: translateY(0);
             }
 
             50% {
-                transform:
-                    translateY(-5px);
+                transform: translateY(-5px);
             }
-
         }
 
 
@@ -451,11 +379,9 @@
         ========================================= */
 
         .tag {
-
             display: inline-block;
 
-            padding:
-                9px 18px;
+            padding: 9px 18px;
 
             margin-bottom: 22px;
 
@@ -463,20 +389,10 @@
 
             border:
                 1px solid
-                rgba(
-                    50,
-                    190,
-                    255,
-                    0.4
-                );
+                rgba(50, 190, 255, 0.4);
 
             background:
-                rgba(
-                    0,
-                    130,
-                    255,
-                    0.10
-                );
+                rgba(0, 130, 255, 0.10);
 
             color: #69ceff;
 
@@ -485,7 +401,6 @@
             font-weight: 700;
 
             letter-spacing: 3px;
-
         }
 
 
@@ -494,13 +409,8 @@
         ========================================= */
 
         h1 {
-
             font-size:
-                clamp(
-                    60px,
-                    8vw,
-                    90px
-                );
+                clamp(60px, 8vw, 90px);
 
             font-weight: 900;
 
@@ -511,7 +421,6 @@
             margin-bottom: 22px;
 
             background:
-
                 linear-gradient(
                     90deg,
                     #ffffff,
@@ -519,18 +428,15 @@
                     #ffffff
                 );
 
-            -webkit-background-clip:
-                text;
+            -webkit-background-clip: text;
 
-            -webkit-text-fill-color:
-                transparent;
+            -webkit-text-fill-color: transparent;
 
             filter:
                 drop-shadow(
                     0 0 20px
                     rgba(0, 160, 255, 0.25)
                 );
-
         }
 
 
@@ -539,23 +445,16 @@
         ========================================= */
 
         .subtitle {
-
             max-width: 580px;
 
             color:
-                rgba(
-                    220,
-                    235,
-                    250,
-                    0.82
-                );
+                rgba(220, 235, 250, 0.82);
 
             font-size: 17px;
 
             line-height: 1.8;
 
             margin-bottom: 30px;
-
         }
 
 
@@ -564,7 +463,6 @@
         ========================================= */
 
         .divider {
-
             width: 100px;
 
             height: 2px;
@@ -572,7 +470,6 @@
             margin-bottom: 30px;
 
             background:
-
                 linear-gradient(
                     90deg,
                     transparent,
@@ -583,7 +480,6 @@
             box-shadow:
                 0 0 15px
                 rgba(0, 180, 255, 0.8);
-
         }
 
 
@@ -592,7 +488,6 @@
         ========================================= */
 
         .question {
-
             font-size: 22px;
 
             font-weight: 700;
@@ -600,7 +495,6 @@
             color: #f1f8ff;
 
             margin-bottom: 27px;
-
         }
 
 
@@ -609,7 +503,6 @@
         ========================================= */
 
         .buttons {
-
             display: flex;
 
             justify-content: center;
@@ -617,14 +510,10 @@
             align-items: center;
 
             gap: 20px;
-
         }
 
-
         button {
-
             width: 165px;
-
             height: 56px;
 
             border-radius: 14px;
@@ -639,29 +528,21 @@
 
             transition:
                 all 0.25s ease;
-
         }
 
 
         /* =========================================
-           YES
+           YES BUTTON
         ========================================= */
 
         #yesBtn {
-
             color: white;
 
             border:
                 1px solid
-                rgba(
-                    100,
-                    220,
-                    255,
-                    0.75
-                );
+                rgba(100, 220, 255, 0.75);
 
             background:
-
                 linear-gradient(
                     135deg,
                     #0077ff,
@@ -669,120 +550,64 @@
                 );
 
             box-shadow:
-
                 0 0 20px
-                rgba(
-                    0,
-                    150,
-                    255,
-                    0.4
-                ),
+                rgba(0, 150, 255, 0.4),
 
                 inset 0 1px
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.25
-                );
-
+                rgba(255, 255, 255, 0.25);
         }
 
-
         #yesBtn:hover {
-
             transform:
                 translateY(-4px)
                 scale(1.03);
 
             box-shadow:
-
                 0 10px 35px
-                rgba(
-                    0,
-                    160,
-                    255,
-                    0.5
-                ),
+                rgba(0, 160, 255, 0.5),
 
                 0 0 40px
-                rgba(
-                    0,
-                    160,
-                    255,
-                    0.3
-                );
-
+                rgba(0, 160, 255, 0.3);
         }
 
 
         /* =========================================
-           NO
+           NO BUTTON
         ========================================= */
 
         #noBtn {
-
             color: #d2dfef;
 
             background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.065
-                );
+                rgba(255, 255, 255, 0.065);
 
             border:
                 1px solid
-                rgba(
-                    180,
-                    215,
-                    245,
-                    0.25
-                );
-
+                rgba(180, 215, 245, 0.25);
         }
 
-
         #noBtn:hover {
-
             background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.11
-                );
+                rgba(255, 255, 255, 0.11);
 
             transform:
                 translateY(-3px);
-
         }
 
 
         /* =========================================
-           DISABLED NO
+           DISABLED NO BUTTON
         ========================================= */
 
         #noBtn:disabled {
+            cursor: not-allowed;
 
-            cursor:
-                not-allowed;
-
-            opacity:
-                0.42;
+            opacity: 0.42;
 
             background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.035
-                );
+                rgba(255, 255, 255, 0.035);
 
-            transform:
-                none;
-
+            transform: none;
         }
 
 
@@ -791,23 +616,16 @@
         ========================================= */
 
         .footer {
-
             margin-top: 35px;
 
             color:
-                rgba(
-                    145,
-                    170,
-                    200,
-                    0.68
-                );
+                rgba(145, 170, 200, 0.68);
 
             font-size: 10px;
 
             letter-spacing: 2px;
 
             line-height: 1.8;
-
         }
 
 
@@ -821,94 +639,66 @@
                 overflow-y: auto;
             }
 
-
             .page {
-
                 min-height: 100vh;
 
                 height: auto;
 
                 padding: 20px 12px;
-
             }
 
-
             .card {
-
                 width: 94vw;
 
                 min-height: auto;
 
                 padding:
                     35px 20px 30px;
-
             }
 
-
             .logo {
-
                 width: 105px;
                 height: 105px;
 
                 margin-bottom: 17px;
-
             }
 
-
             .tag {
-
                 font-size: 9px;
 
                 letter-spacing: 2px;
 
                 padding:
                     7px 12px;
-
             }
 
-
             h1 {
-
                 font-size: 52px;
 
                 letter-spacing: 4px;
-
             }
 
-
             .subtitle {
-
                 font-size: 14px;
 
                 line-height: 1.7;
-
             }
-
 
             .question {
-
                 font-size: 17px;
-
             }
 
-
             button {
-
                 width: 135px;
 
                 height: 50px;
 
                 font-size: 13px;
-
             }
-
 
             .footer {
-
                 font-size: 7px;
-
             }
-
         }
 
     </style>
@@ -924,12 +714,14 @@
     ========================================== -->
 
     <video
+        id="backgroundVideo"
         class="video-background"
         autoplay
         muted
         loop
         playsinline
         preload="auto"
+        disablePictureInPicture
     >
 
         <source
@@ -940,7 +732,7 @@
     </video>
 
 
-    <!-- DARK OVERLAY -->
+    <!-- VIDEO OVERLAY -->
 
     <div class="video-overlay"></div>
 
@@ -950,7 +742,7 @@
     <div class="grid"></div>
 
 
-    <!-- GLOW -->
+    <!-- BACKGROUND GLOWS -->
 
     <div class="glow"></div>
 
@@ -958,11 +750,10 @@
 
 
     <!-- =========================================
-         PAGE
+         MAIN PAGE
     ========================================== -->
 
     <main class="page">
-
 
         <section class="card">
 
@@ -1001,13 +792,11 @@
             <!-- TITLE -->
 
             <h1>
-
                 JOIN IETE
-
             </h1>
 
 
-            <!-- SUBTITLE -->
+            <!-- DESCRIPTION -->
 
             <p class="subtitle">
 
@@ -1039,20 +828,13 @@
 
             <div class="buttons">
 
-
                 <button id="yesBtn">
-
                     YES
-
                 </button>
-
 
                 <button id="noBtn">
-
                     NO
-
                 </button>
-
 
             </div>
 
@@ -1073,7 +855,6 @@
 
         </section>
 
-
     </main>
 
 
@@ -1088,15 +869,11 @@
 
 
         const yesBtn =
-            document.getElementById(
-                "yesBtn"
-            );
+            document.getElementById("yesBtn");
 
 
         const noBtn =
-            document.getElementById(
-                "noBtn"
-            );
+            document.getElementById("noBtn");
 
 
         /* =========================================
@@ -1105,7 +882,7 @@
 
         yesBtn.addEventListener(
             "click",
-            () => {
+            function () {
 
                 window.open(
                     formURL,
@@ -1142,10 +919,14 @@
 
         noBtn.addEventListener(
             "click",
-            () => {
+            function () {
 
                 noClickCount++;
 
+
+                /*
+                    Change text.
+                */
 
                 noBtn.textContent =
                     noTexts[
@@ -1154,7 +935,8 @@
 
 
                 /*
-                    Disable on final text.
+                    Disable after
+                    final message.
                 */
 
                 if (
@@ -1171,25 +953,160 @@
 
 
         /* =========================================
-           START VIDEO
+           BACKGROUND VIDEO
         ========================================== */
 
         const video =
-            document.querySelector(
-                ".video-background"
+            document.getElementById(
+                "backgroundVideo"
             );
 
 
-        video.play().catch(() => {
+        /*
+            Make absolutely sure
+            autoplay is muted.
+        */
 
-            console.log(
-                "Autoplay waiting for browser permission."
-            );
+        video.muted = true;
 
-        });
+        video.defaultMuted = true;
+
+        video.loop = true;
+
+
+        /*
+            Initial playback.
+        */
+
+        function startVideo() {
+
+            if (
+                video.paused &&
+                document.visibilityState === "visible"
+            ) {
+
+                video.play().catch(
+                    function () {
+                        // Browser will retry later.
+                    }
+                );
+
+            }
+
+        }
+
+
+        /*
+            Start after page loads.
+        */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                startVideo();
+
+            }
+        );
+
+
+        /*
+            If the browser pauses the
+            video while the page is visible,
+            resume it.
+
+            IMPORTANT:
+            We do NOT reset currentTime.
+        */
+
+        video.addEventListener(
+            "pause",
+            function () {
+
+                if (
+                    document.visibilityState ===
+                    "visible"
+                ) {
+
+                    setTimeout(
+                        startVideo,
+                        300
+                    );
+
+                }
+
+            }
+        );
+
+
+        /*
+            When the video finishes,
+            loop it manually as an extra
+            safety measure.
+        */
+
+        video.addEventListener(
+            "ended",
+            function () {
+
+                video.currentTime = 0;
+
+                startVideo();
+
+            }
+        );
+
+
+        /*
+            When the user comes back
+            to the tab.
+        */
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    document.visibilityState ===
+                    "visible"
+                ) {
+
+                    startVideo();
+
+                }
+
+            }
+        );
+
+
+        /*
+            Extra safety check.
+
+            Every 3 seconds we check whether
+            the video has unexpectedly stopped.
+
+            It does NOT restart the video
+            from the beginning.
+        */
+
+        setInterval(
+            function () {
+
+                if (
+                    document.visibilityState ===
+                    "visible" &&
+                    video.paused
+                ) {
+
+                    startVideo();
+
+                }
+
+            },
+            3000
+        );
 
     </script>
-
 
 </body>
 
